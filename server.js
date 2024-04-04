@@ -36,10 +36,10 @@ app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/category", categoryRoutes);
 app.use("/api/v1/product", productRoutes);
 
-
+const __dirname = path.dirname(new URL(import.meta.url).pathname);
 //static files
-app.use(express.static(path.join(__dirname,"./client/build")))
 
+app.use(express.static(path.join(__dirname,"./client/build")));
 app.get('*', function (req,res) {
   res.sendFile(path.join(__dirname,"./client/build/index.html"))
 });
