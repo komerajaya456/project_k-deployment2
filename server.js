@@ -16,12 +16,12 @@ import path from 'path'
 
 
 
+
+const app=express()
 app.use(bodyParser.json({ limit: '10mb' })); // Adjust limit as needed
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-const app=express()
 
 
 dotenv.config()
