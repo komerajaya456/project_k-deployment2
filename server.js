@@ -7,6 +7,7 @@ import authRoutes from "./routes/authRoute.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import cors from "cors";
+import bodyParser from "body-parser"
 
 import path from 'path'
 
@@ -15,7 +16,9 @@ import path from 'path'
 
 
 
+app.use(bodyParser.json({ limit: '10mb' })); // Adjust limit as needed
 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 
 const app=express()
